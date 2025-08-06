@@ -1,2 +1,2 @@
 # anil
-svs viewer for Chaturvedi, Anil
+svs viewer for Anil Chaturvedi
