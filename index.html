@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link href="gem.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="index.js"></script>
+    </head>
+    <body>
+
+<h1>
+    Gemini
+    <sup style="font-size:medium">
+        [<a href="https://github.com/episphere/anil" target="_blank">code</a>]
+        [<a href="https://observablehq.com/@episphere/anil" target="_blank">notebook</a>]
+    </sup>
+    <br><span style="font-size:xx-large">Explorer</span>
+    
+</h1>
+<!-- Summary -->
+    <p>
+        Exploring <a href="https://ai.google.dev/gemini-api/docs" target="_blank">programatic interoperability</a> of Google Gemini's GenAI. For now, testing will use the <a href="https://deepmind.google/technologies/gemini/flash" target="_blank">gemini-1.5-flash</a> model.
+    </p>
+        Show Info <input type="checkbox" id=showInfo>
+    <hr>
+    <div id="divList" hidden=true style="font-size:small">    
+    <li style="font-size:small">
+        <a href="https://aistudio.google.com/app/apikey" target="_blank">API Keys</a>. <button id="provideKey" style="font-size:small">Provide yours</button> if you want to store it in localStorage. In that case <code style="font-size:small">GEM(_YOUR_API_KEY_)</code> below, is simply <code style="font-size:small">GEM</code> and you keep your API key out of prying eyes.
+    </li>
+    <li style="font-size:small">
+        ES6 <a href="https://ai.google.dev/gemini-api/docs/downloads" target="_blank">SDK</a>: <code style="font-size:small">"https://esm.run/@google/generative-ai"</code> <br>Not used here, exploration focused on APIs, not SDKs.
+    </li>
+    <li>
+        Programaticaly: <br><code style="font-size:small">await (new (await import('https://episphere.github.io/gemini/gem.mjs'))<br>.GEM(_YOUR_API_KEY_)).post('how long to the moon')</code>
+    </li>
+    <li>
+        Pre-populated: <a href="https://episphere.github.io/gemini/chat" target="_blank">episphere.github.io/gemini/chat</a>
+    </li>
+    <li>
+        See also <a href="https://ai.google.dev/gemini-api/docs/quickstart?lang=web" target="_blank">Quick start</a>; Google <a href="https://ai.google.dev/gemini-api/docs/ai-studio-quickstart" target="_blank">AI Studio</a>.
+    </li>
+    <hr>
+    </div>
+        <div id="responseDiv"></div>
+        <textarea id="promptTextArea" style="width:100%;height:5em"></textarea>
+        <button id=reset>Reset</button>
+        <button id=embed >Embed</button>
+        [
+        Q<input type="radio" id=embedQ name="embedTarget" checked=true>
+        A<input type="radio" id=embedA name="embedTarget">
+        Q&A<input type="radio" id=embedQA name="embedTarget">
+        Q&As<input type="radio" id=embedQAs name="embedTarget">
+        ]
+        <br>Save embedding <button id=toFile>to file</button> <button id=toMemory>to memory</button> <button id=clear>clear</button>
+    </body>
+</html>
